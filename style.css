@@ -1,0 +1,96 @@
+/* Grundläggande inställningar för en modern layout */
+body {
+    background-color: #1a1a1b; /* Mörkgrå bakgrund */
+    color: #e2e8f0; /* Ljusblå-grå text för bättre läsbarhet än kritvitt */
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header-sektion med fokus på introduktion */
+header {
+    width: 90%;
+    max-width: 1000px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #63b3ed; /* Ljusblå accentfärg */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.intro {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #a0aec0;
+}
+
+/* Container för huvudinnehållet */
+main {
+    width: 90%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsiv grid */
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+/* Kort-design för de fyra sektionerna [cite: 11] */
+section {
+    background-color: #2d3748; /* Något ljusare grå för korten */
+    padding: 25px;
+    border-radius: 12px; /* Mjuka hörn */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Skuggor för djup */
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px); /* Subtil interaktion vid hovring */
+}
+
+section h2 {
+    color: #63b3ed;
+    border-bottom: 2px solid #4a5568;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+strong {
+    color: #90cdf4; /* Ljusare blå för betoning */
+}
+
+/* Footer-inställningar */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #718096;
+    border-top: 1px solid #2d3748;
+}
+
+/* Responsivitet för mobila enheter */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    main {
+        grid-template-columns: 1fr; /* En kolumn på små skärmar */
+    }
+}
