@@ -62,5 +62,66 @@
         <p>&copy; 2026 Utbildningsmaterial för Artificiell Intelligens (ARTI1000X)</p>
     </footer>
 
+// Skapa Quiz-modulen
+const quizData = [
+    { 
+        task: "Analysera 1 miljon röntgenbilder på en minut", 
+        winner: "AI", 
+        motivation: "AI är överlägsen människan på att bearbeta enorma datamängder extremt snabbt. " 
+    },
+    { 
+        task: "Förstå ironi och djupa mänskliga känslor i ett samtal", 
+        winner: "Människa", 
+        motivation: "Mänsklig intelligens har en unik förmåga till empati och kontextuell förståelse som AI försöker efterlikna men inte når fullt ut. " 
+    },
+    { 
+        task: "Objektigenkänning i realtid (t.ex. självkörande bilar)", 
+        winner: "AI", 
+        motivation: "Detta är en central teknik inom AI (vision) där maskinen tränas för att identifiera objekt snabbare än mänsklig reaktionsförmåga tillåter. [cite: 13, 14]" 
+    },
+    { 
+        task: "Skriva en dikt med genuin personlig livserfarenhet", 
+        winner: "Människa", 
+        motivation: "Generativ AI kan skapa text, men saknar medvetande och äkta livserfarenhet. [cite: 13, 19]" 
+    }
+];
+
+function initQuiz() {
+    const quizSection = document.getElementById('jamforelse');
+    const quizContainer = document.createElement('div');
+    quizContainer.innerHTML = '<h3>Snabbtest: Vem vinner?</h3><div id="quiz-box"></div>';
+    quizSection.appendChild(quizContainer);
+
+    const quizBox = document.getElementById('quiz-box');
+
+    quizData.forEach((item, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.style.marginBottom = "20px";
+        questionDiv.style.padding = "15px";
+        questionDiv.style.border = "1px solid #4a5568";
+        questionDiv.style.borderRadius = "8px";
+
+        questionDiv.innerHTML = `
+            <p><strong>Uppgift:</strong> ${item.task}</p>
+            <button onclick="checkAnswer(${index}, 'Människa')">Människa</button>
+            <button onclick="checkAnswer(${index}, 'AI')">AI</button>
+            <p id="result-${index}" style="display:none; margin-top:10px; font-style:italic;"></p>
+        `;
+        quizBox.appendChild(questionDiv);
+    });
+}
+
+function checkAnswer(index, choice) {
+    const resultP = document.getElementById(`result-${index}`);
+    const isCorrect = choice === quizData[index].winner;
+    
+    resultP.style.display = "block";
+    resultP.style.color = isCorrect ? "#68d391" : "#fc8181";
+    resultP.innerHTML = `<strong>${isCorrect ? 'Rätt!' : 'Intressant tanke!'}</strong> Vinnare: ${quizData[index].winner}. ${quizData[index].motivation}`;
+}
+
+// Starta quizen när sidan laddats
+window.onload = initQuiz;
+    
 </body>
 </html>
