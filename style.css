@@ -12,17 +12,50 @@ body {
 }
 
 /* Header-sektion med fokus på introduktion */
+/* Uppdaterad och förstärkt Header-sektion */
 header {
-    width: 90%;
-    max-width: 1000px;
-    padding: 40px 20px;
+    width: 100%;
+    padding: 60px 20px;
     text-align: center;
+    background: linear-gradient(180deg, #2d3748 0%, #1a1a1b 100%); /* Subtil gradient för djup */
+    margin-bottom: 30px;
 }
 
 header h1 {
-    color: #63b3ed; /* Ljusblå accentfärg */
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 4rem; /* Betydligt större */
+    font-weight: 800;
+    color: #63b3ed;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    
+    /* Avancerad skuggningseffekt för 3D-känsla */
+    text-shadow: 
+        3px 3px 0px #2c5282, 
+        6px 6px 20px rgba(0, 0, 0, 0.5);
+    
+    /* Animation för att dra åt sig uppmärksamhet vid laddning */
+    animation: fadeInDown 1s ease-out;
+}
+
+/* En mjuk animation som får rubriken att "falla" på plats */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsiv justering för mindre skärmar */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
 }
 
 .intro {
