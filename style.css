@@ -38,6 +38,20 @@ header h1 {
     animation: fadeInDown 1s ease-out;
 }
 
+.ai-logo {
+    width: 80px; /* Justera storlek efter behov */
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px #63b3ed); /* Ger logotypen en ljusblå gloria */
+    animation: pulse 3s infinite ease-in-out; /* En subtil animation */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
 /* En mjuk animation som får rubriken att "falla" på plats */
 @keyframes fadeInDown {
     0% {
