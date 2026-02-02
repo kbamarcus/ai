@@ -141,3 +141,46 @@ footer {
         grid-template-columns: 1fr; /* En kolumn på små skärmar */
     }
 }
+
+/* Behållare för att lägga logo och text på samma rad */
+.header-content {
+    display: flex;
+    align-items: center; /* Centrerar elementen vertikalt mot varandra */
+    justify-content: center; /* Håller hela gruppen centrerad i headern */
+    gap: 20px; /* Mellanrum mellan logo och rubrik */
+    margin-bottom: 10px;
+}
+
+/* Den mindre logotypen */
+.ai-logo {
+    width: 50px; /* Mindre storlek som efterfrågat */
+    height: auto;
+    filter: drop-shadow(0 0 8px #63b3ed);
+    flex-shrink: 0; /* Förhindrar att logon trycks ihop på små skärmar */
+}
+
+/* Justering av rubriken för att passa bredvid logon */
+header h1 {
+    font-size: 3.5rem; /* Något mindre för att balansera med logon */
+    margin: 0;
+    line-height: 1;
+    /* Behåller din snygga skuggning */
+    text-shadow: 2px 2px 0px #2c5282, 4px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsivitet: Gör allt mindre på mobilen */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Stapla dem på små skärmar om det blir för trångt */
+        gap: 10px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .ai-logo {
+        width: 40px;
+    }
+}
